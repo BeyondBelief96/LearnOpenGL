@@ -148,8 +148,10 @@
     <ClInclude Include="vertexdata.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.fs" />
-    <None Include="shader.vs" />
+    <None Include="lightingShader.fs" />
+    <None Include="lightingShader.vs" />
+    <None Include="cubeShader.fs" />
+    <None Include="cubeShader.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
