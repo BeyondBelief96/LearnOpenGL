@@ -108,11 +108,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\OpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;user32.lib;gdi32.lib;shell32.lib;assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\OpenGL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -132,8 +134,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Downloads\glad\src\glad.c" />
     <ClCompile Include="display.cpp" />
+    <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="shaders.cpp" />
     <ClCompile Include="stb_image.cpp" />
@@ -148,10 +150,8 @@
     <ClInclude Include="vertexdata.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="lightingShader.fs" />
-    <None Include="lightingShader.vs" />
-    <None Include="cubeShader.fs" />
-    <None Include="cubeShader.vs" />
+    <None Include="Shaders\skybox.fs" />
+    <None Include="Shaders\skybox.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
