@@ -4,8 +4,8 @@
 
 #include <GLFW/glfw3.h>
 
-extern float deltaTime; // Time between current frame and last frame.
-extern float lastFrame; // Time of last frame.
+extern float delta_time; // Time between current frame and last frame.
+extern float last_frame; // Time of last frame.
 
 GLFWwindow* initialize_opengl_window(void);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);

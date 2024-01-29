@@ -1,5 +1,3 @@
-
-
 #version 330 core
 out vec4 FragColor;
 
@@ -31,7 +29,7 @@ void main()
     if(blinn)
     {
         vec3 halfwayDir = normalize(lightDir + viewDir);  
-        spec = pow(max(dot(normal, halfwayDir), 0.0), 64.0);
+        spec = pow(max(dot(normal, halfwayDir), 0.0), 32.0);
     }
     else
     {

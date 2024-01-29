@@ -4,7 +4,7 @@
 #include "stb_image.h"
 #include "texture.h"
 
-Texture2D::Texture2D(const char* fileName, GLenum color_format, GLenum color_type)
+Texture2D::Texture2D(const char* fileName, GLenum color_format, GLenum color_type, GLenum internalFormat)
 {
     unsigned int texture;
     glGenTextures(1, &texture);
@@ -22,7 +22,7 @@ Texture2D::Texture2D(const char* fileName, GLenum color_format, GLenum color_typ
     unsigned char* data = stbi_load(fileName, &width, &height, &nrChannels, 0);
     if (data)
     {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, color_format, color_type, data);
+        glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, width, height, 0, color_format, color_type, data);
         glGenerateMipmap(GL_TEXTURE_2D);
         ID = texture;
     }

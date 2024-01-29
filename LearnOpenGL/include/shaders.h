@@ -11,7 +11,7 @@ public:
     //the program ID
     unsigned int ID;
 
-    //consturctor reads and builds the shader
+    //constructor reads and builds the shader
     Shader(const char* vertexPath, const char* fragmentPath);
     //use/activate the shader
     void use();
